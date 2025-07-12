@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teams | OfficeConnect</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <a href="index.html" class="nav-item">
+          <i class="fas fa-home"></i><span>Dashboard</span>
+        </a>
+        <a href="calendar.html" class="nav-item">
+          <i class="fas fa-calendar-alt"></i><span>Calendar</span>
+        </a>
+        <a href="teams.html" class="nav-item active">
+          <i class="fas fa-users"></i><span>Teams</span>
+        </a>
+        <a href="documents.html" class="nav-item">
+          <i class="fas fa-file-alt"></i><span>Documents</span>
+        </a>
+        <a href="reports.html" class="nav-item">
+          <i class="fas fa-chart-line"></i><span>Reports</span>
+        </a>
+        <div class="divider"></div>
+        <a href="settings.html" class="nav-item">
+          <i class="fas fa-cog"></i><span>Settings</span>
+        </a>
+        <a href="help.html" class="nav-item">
+          <i class="fas fa-question-circle"></i><span>Help Center</span>
+        </a>
+      </aside>
+
+      <!-- MAIN TEAMS CONTENT -->
+      <div class="main-content">
+        <div class="page-header">
+          <h2><i class="fas fa-users"></i> Our Teams</h2>
+        </div>
+        <div class="teams-grid">
+          <!-- Team 1 -->
+          <div class="team-card">
+            <div class="team-header" style="background-color: var(--primary)">
+              <h3>Leadership</h3>
+            </div>
+            <div class="team-members">
+              <div class="team-member">
+                <div class="avatar">JS</div>
+                <div class="member-info">
+                  <h4>Jamie Smith</h4>
+                  <p>CEO</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="avatar">MK</div>
+                <div class="member-info">
+                  <h4>Michael Kim</h4>
+                  <p>CTO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team 2 -->
+          <div class="team-card">
+            <div class="team-header" style="background-color: var(--accent)">
+              <h3>Development</h3>
+            </div>
+            <div class="team-members">
+              <div class="team-member">
+                <div class="avatar">AL</div>
+                <div class="member-info">
+                  <h4>Alex Lee</h4>
+                  <p>Senior Developer</p>
+                </div>
+              </div>
+              <div class="team-member">
+                <div class="avatar">RJ</div>
+                <div class="member-info">
+                  <h4>Ryan Johnson</h4>
+                  <p>Frontend Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

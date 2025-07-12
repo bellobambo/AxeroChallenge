@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar | OfficeConnect</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header (same as index.html) -->
+      <header>
+        <div class="logo">
+          <i class="fas fa-building"></i>
+          <h1>Axero OfficeConnect</h1>
+        </div>
+        <div class="user-actions">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." />
+          </div>
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="user-profile">
+            <div class="avatar">JS</div>
+            <span>Jamie Smith</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar (same as index.html) -->
+      <aside class="sidebar">
+        <a href="index.html" class="nav-item">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="calendar.html" class="nav-item active">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Calendar</span>
+        </a>
+        <!-- Other navigation items -->
+      </aside>
+
+      <!-- Calendar Content -->
+      <!-- Calendar Content -->
+      <main class="main-content">
+        <div class="page">
+          <div class="page-header">
+            <h2><i class="fas fa-calendar-alt"></i> Company Calendar</h2>
+          </div>
+          <div class="calendar-controls">
+            <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+            <h3 id="current-month">July 2025</h3>
+            <button id="next-month">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="calendar-view">
+            <div class="calendar-grid" id="calendar-days">
+              <!-- Calendar days will be inserted here by JavaScript -->
+            </div>
+            <div class="calendar-events">
+              <h3>Upcoming Events</h3>
+              <div class="events-tabs">
+                <button class="tab-btn active" data-tab="birthdays">
+                  Birthdays
+                </button>
+                <button class="tab-btn" data-tab="meetings">
+                  Axero Meetings
+                </button>
+                <button class="tab-btn" data-tab="updates">Team Updates</button>
+              </div>
+              <div class="events-content">
+                <div id="birthdays-tab" class="tab-content active">
+                  <table class="events-table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Employee</th>
+                        <th>Department</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>July 15</td>
+                        <td>
+                          <div class="employee-badge">
+                            <div class="avatar-small">MK</div>
+                            <span>Michael Kim</span>
+                          </div>
+                        </td>
+                        <td>Engineering</td>
+                        <td><button class="wish-btn">Send Wish</button></td>
+                      </tr>
+                      <tr>
+                        <td>July 22</td>
+                        <td>
+                          <div class="employee-badge">
+                            <div class="avatar-small">TD</div>
+                            <span>Taylor Davis</span>
+                          </div>
+                        </td>
+                        <td>Marketing</td>
+                        <td><button class="wish-btn">Send Wish</button></td>
+                      </tr>
+                      <tr>
+                        <td>July 28</td>
+                        <td>
+                          <div class="employee-badge">
+                            <div class="avatar-small">RJ</div>
+                            <span>Ryan Johnson</span>
+                          </div>
+                        </td>
+                        <td>Product</td>
+                        <td><button class="wish-btn">Send Wish</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="meetings-tab" class="tab-content">
+                  <table class="events-table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Meeting</th>
+                        <th>Participants</th>
+                        <th>Location</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>July 10, 10:00 AM</td>
+                        <td>Q3 Strategy Review</td>
+                        <td>
+                          <div class="participants">
+                            <div class="avatar-small">AX</div>
+                            <div class="avatar-small">JS</div>
+                            <div class="avatar-small">MK</div>
+                          </div>
+                        </td>
+                        <td>Conference Room A</td>
+                      </tr>
+                      <tr>
+                        <td>July 17, 2:00 PM</td>
+                        <td>Product Roadmap</td>
+                        <td>
+                          <div class="participants">
+                            <div class="avatar-small">AX</div>
+                            <div class="avatar-small">RJ</div>
+                            <div class="avatar-small">AL</div>
+                          </div>
+                        </td>
+                        <td>Zoom (Remote)</td>
+                      </tr>
+                      <tr>
+                        <td>July 24, 9:30 AM</td>
+                        <td>Executive Briefing</td>
+                        <td>
+                          <div class="participants">
+                            <div class="avatar-small">AX</div>
+                            <div class="avatar-small">JS</div>
+                            <div class="avatar-small">TD</div>
+                          </div>
+                        </td>
+                        <td>Board Room</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="updates-tab" class="tab-content">
+                  <table class="events-table">
+                    <thead>
+                      <tr>
+                        <th>Team</th>
+                        <th>Lead</th>
+                        <th>Next Update</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Engineering</td>
+                        <td>
+                          <div class="employee-badge">
+                            <div class="avatar-small">MK</div>
+                            <span>Michael Kim</span>
+                          </div>
+                        </td>
+                        <td>July 11, 11:00 AM</td>
+                        <td><span class="status on-track">On Track</span></td>
+                      </tr>
+                      <tr>
+                        <td>Marketing</td>
+                        <td>
+                          <div class="employee-badge">
+                            <div class="avatar-small">TD</div>
+                            <span>Taylor Davis</span>
+                          </div>
+                        </td>
+                        <td>July 12, 10:30 AM</td>
+                        <td><span class="status delayed">Delayed</span></td>
+                      </tr>
+                      <tr>
+                        <td>Product</td>
+                        <td>
+                          <div class="employee-badge">
+                            <div class="avatar-small">RJ</div>
+                            <span>Ryan Johnson</span>
+                          </div>
+                        </td>
+                        <td>July 13, 9:00 AM</td>
+                        <td><span class="status completed">Completed</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer (same as index.html) -->
+      <footer>
+        <p>
+          © 2025 OfficeConnect Intranet | Designed for the Axero Frontend
+          Challenge: Office Edition
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

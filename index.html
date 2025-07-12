@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OfficeConnect | Axero Challenge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="logo">
+          <i class="fas fa-building"></i>
+          <h1>Axero OfficeConnect</h1>
+        </div>
+        <div class="user-actions">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." />
+          </div>
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="user-profile">
+            <div class="avatar">JS</div>
+            <span>Jamie Smith</span>
+          </div>
+        </div>
+      </header>
+
+      <aside class="sidebar">
+        <a href="index.html" class="nav-item">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="/calander.html" class="nav-item">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Calendar</span>
+        </a>
+        <a href="teams.html" class="nav-item">
+          <i class="fas fa-users"></i>
+          <span>Teams</span>
+        </a>
+        <a href="documents.html" class="nav-item">
+          <i class="fas fa-file-alt"></i>
+          <span>Documents</span>
+        </a>
+        <a href="reports.html" class="nav-item">
+          <i class="fas fa-chart-line"></i>
+          <span>Reports</span>
+        </a>
+        <div class="divider"></div>
+        <a href="settings.html" class="nav-item">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+        <a href="help.html" class="nav-item">
+          <i class="fas fa-question-circle"></i>
+          <span>Help Center</span>
+        </a>
+      </aside>
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="welcome-banner">
+          <h2>Welcome back, Jamie!</h2>
+          <p>Here's what's happening in your workplace today.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value">24</div>
+            <div class="stat-label">Active Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">18</div>
+            <div class="stat-label">Team Members</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">93%</div>
+            <div class="stat-label">Project Completion</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">7</div>
+            <div class="stat-label">Upcoming Events</div>
+          </div>
+        </div>
+
+        <h2 class="dashboard-title">Company Dashboard</h2>
+        <div class="widgets-grid">
+          <!-- Announcements Widget -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3><i class="fas fa-bullhorn"></i> Announcements</h3>
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+            <div class="announcements-list">
+              <div class="announcement">
+                <h4>Office Renovation Complete</h4>
+                <div class="date">July 10, 2025</div>
+                <p>
+                  The 3rd floor renovation is now complete. Please visit the new
+                  collaboration spaces!
+                </p>
+              </div>
+              <div class="announcement">
+                <h4>Summer Picnic Announcement</h4>
+                <div class="date">July 8, 2025</div>
+                <p>
+                  Join us for our annual summer picnic on July 25th at Riverside
+                  Park.
+                </p>
+              </div>
+              <div class="announcement">
+                <h4>New HR Policies</h4>
+                <div class="date">July 5, 2025</div>
+                <p>
+                  Updated remote work policies are now available in the HR
+                  portal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Events Widget -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3><i class="fas fa-calendar-check"></i> Upcoming Events</h3>
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+            <div class="events-list">
+              <div class="event">
+                <h4>Team Strategy Meeting</h4>
+                <div class="date">Today, 10:00 AM - 11:30 AM</div>
+                <div class="location">
+                  <i class="fas fa-map-marker-alt"></i> Conference Room B
+                </div>
+              </div>
+              <div class="event">
+                <h4>Lunch & Learn: AI Trends</h4>
+                <div class="date">Tomorrow, 12:00 PM - 1:00 PM</div>
+                <div class="location">
+                  <i class="fas fa-map-marker-alt"></i> Cafeteria
+                </div>
+              </div>
+              <div class="event">
+                <h4>Project Deadline</h4>
+                <div class="date">July 20, 2025</div>
+                <p>Quarterly report submissions due</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Employee Spotlight Widget -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3><i class="fas fa-star"></i> Employee Spotlight</h3>
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+            <div class="employee">
+              <div class="avatar">MK</div>
+              <div class="employee-info">
+                <h4>Michael Kim</h4>
+                <div class="employee-role">Senior Developer</div>
+                <p>
+                  "Celebrating 5 years with the company this month! Thanks for
+                  all the support."
+                </p>
+              </div>
+            </div>
+            <div class="quick-links">
+              <div class="link-btn">
+                <i class="fas fa-envelope"></i> Message
+              </div>
+              <div class="link-btn">
+                <i class="fas fa-calendar-plus"></i> Schedule
+              </div>
+            </div>
+          </div>
+
+          <!-- Resources Widget -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3><i class="fas fa-book"></i> Resources</h3>
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+            <div class="quick-links">
+              <div class="link-btn">
+                <i class="fas fa-file-pdf"></i> Employee Handbook
+              </div>
+              <div class="link-btn">
+                <i class="fas fa-chart-bar"></i> Performance Reviews
+              </div>
+              <div class="link-btn">
+                <i class="fas fa-wifi"></i> Wi-Fi Access
+              </div>
+              <div class="link-btn">
+                <i class="fas fa-utensils"></i> Cafeteria Menu
+              </div>
+              <div class="link-btn">
+                <i class="fas fa-car"></i> Parking Info
+              </div>
+              <div class="link-btn">
+                <i class="fas fa-first-aid"></i> Health & Safety
+              </div>
+            </div>
+          </div>
+
+          <!-- Watercooler Chat Widget -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3><i class="fas fa-comments"></i> Watercooler Chat</h3>
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+            <div class="watercooler">
+              <div class="avatar">TD</div>
+              <div class="watercooler-content">
+                <div class="watercooler-header">
+                  <div class="watercooler-author">Taylor Davis</div>
+                  <div class="watercooler-time">9:45 AM</div>
+                </div>
+                <p>
+                  Has anyone tried the new coffee machine in the break room?
+                  It's amazing!
+                </p>
+              </div>
+            </div>
+            <div class="watercooler">
+              <div class="avatar">RJ</div>
+              <div class="watercooler-content">
+                <div class="watercooler-header">
+                  <div class="watercooler-author">Ryan Johnson</div>
+                  <div class="watercooler-time">10:02 AM</div>
+                </div>
+                <p>
+                  Yes! The espresso is perfect. Game changer for Monday
+                  mornings.
+                </p>
+              </div>
+            </div>
+            <div class="watercooler">
+              <div class="avatar">AL</div>
+              <div class="watercooler-content">
+                <div class="watercooler-header">
+                  <div class="watercooler-author">Alex Lee</div>
+                  <div class="watercooler-time">10:15 AM</div>
+                </div>
+                <p>Don't forget about the free pastries on the counter too!</p>
+              </div>
+            </div>
+            <div class="input-area">
+              <input type="text" placeholder="Join the conversation..." />
+            </div>
+          </div>
+
+          <!-- Recent Files Widget -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3><i class="fas fa-folder"></i> Recent Files</h3>
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+            <div class="announcements-list">
+              <div class="announcement">
+                <h4><i class="fas fa-file-pdf"></i> Quarterly Report.pdf</h4>
+                <div class="date">Modified: July 10, 2025</div>
+                <p>Marketing Team</p>
+              </div>
+              <div class="announcement">
+                <h4><i class="fas fa-file-excel"></i> Budget_Q3.xlsx</h4>
+                <div class="date">Modified: July 9, 2025</div>
+                <p>Finance Department</p>
+              </div>
+              <div class="announcement">
+                <h4><i class="fas fa-file-word"></i> Product_Specs.docx</h4>
+                <div class="date">Modified: July 8, 2025</div>
+                <p>Development Team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <p>
+          © 2025 OfficeConnect Intranet | Designed for the Axero Frontend
+          Challenge: Office Edition
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
