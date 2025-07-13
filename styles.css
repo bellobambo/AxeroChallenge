@@ -564,7 +564,7 @@ footer {
 
 
 
-.calendar-controls {
+.calender-controls {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -572,7 +572,7 @@ footer {
     margin: 1.5rem 0;
 }
 
-.calendar-controls button {
+.calender-controls button {
     background-color: var(--primary);
     color: var(--white);
     border: none;
@@ -581,17 +581,17 @@ footer {
     cursor: pointer;
 }
 
-.calendar-controls button:hover {
+.calender-controls button:hover {
     background-color: var(--primary-dark);
 }
 
-/* === FULL TABLE CALENDAR === */
-.calendar-grid {
+/* === FULL TABLE calender === */
+.calender-grid {
     width: 100%;
     overflow-x: auto;
 }
 
-.calendar-grid table {
+.calender-grid table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
@@ -600,12 +600,12 @@ footer {
     background-color: var(--card-bg);
 }
 
-body.dark .calendar-grid table {
+body.dark .calender-grid table {
     background-color: var(--dark-card);
     box-shadow: 0 0 4px var(--dark-shadow);
 }
 
-.calendar-grid th {
+.calender-grid th {
     padding: 0.75rem;
     background-color: var(--primary-light);
     color: white;
@@ -613,7 +613,7 @@ body.dark .calendar-grid table {
     font-size: 0.85rem;
 }
 
-.calendar-grid td {
+.calender-grid td {
     width: 14.28%;
     height: 100px;
     text-align: left;
@@ -623,17 +623,17 @@ body.dark .calendar-grid table {
     font-weight: 500;
 }
 
-body.dark .calendar-grid th {
+body.dark .calender-grid th {
     background-color: var(--dark-primary);
 }
 
-body.dark .calendar-grid td {
+body.dark .calender-grid td {
     border-color: var(--dark-shadow);
     color: var(--dark-text);
 }
 
 /* Today's date */
-.calendar-grid .today {
+.calender-grid .today {
     background-color: var(--accent);
     color: white;
     border-radius: 6px;
@@ -641,17 +641,17 @@ body.dark .calendar-grid td {
 }
 
 /* Optional: highlight empty cells */
-.calendar-grid .empty {
+.calender-grid .empty {
     background-color: var(--gray-light);
 }
 
-body.dark .calendar-grid .empty {
+body.dark .calender-grid .empty {
     background-color: #2b2b2b;
 }
 
 
 /* ===== Events Section ===== */
-.calendar-events {
+.calender-events {
     flex: 1;
     background: var(--card-bg);
     padding: 1.5rem;
@@ -659,13 +659,13 @@ body.dark .calendar-grid .empty {
     box-shadow: 0 2px 6px var(--shadow);
 }
 
-body.dark .calendar-events {
+body.dark .calender-events {
     background: var(--dark-card);
     box-shadow: 0 2px 6px var(--dark-shadow);
     color: var(--dark-text);
 }
 
-.calendar-events h3 {
+.calender-events h3 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
 }
@@ -800,6 +800,9 @@ body.dark .events-table td {
     background-color: #4caf50;
     color: white;
 }
+
+
+
 
 
 /* Teams Grid */

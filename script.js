@@ -87,8 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // Navigation functionality
 document.querySelectorAll(".nav-item").forEach((item) => {
   item.addEventListener("click", function (e) {
-    e.preventDefault();
-
     // Remove active class from all nav items
     document.querySelectorAll(".nav-item").forEach((navItem) => {
       navItem.classList.remove("active");
@@ -97,37 +95,42 @@ document.querySelectorAll(".nav-item").forEach((item) => {
     // Add active class to clicked nav item
     this.classList.add("active");
 
-    // Hide all pages
-    document.querySelectorAll(".page").forEach((page) => {
-      page.style.display = "none";
-    });
+    // If it's not an external link, prevent default
+    if (!this.href.startsWith("http") && !this.href.startsWith("mailto")) {
+      e.preventDefault();
 
-    // Show the corresponding page
-    const pageId =
-      this.querySelector("i").className.replace("fas fa-", "") + "-page";
-    document.getElementById(pageId).style.display = "block";
+      // Get the target page from href
+      const targetPage = this.getAttribute("href");
 
-    // Special case for dashboard
-    if (this.querySelector("i").classList.contains("fa-home")) {
-      document.querySelector(".main-content").style.display = "block";
-      document.getElementById("pages").style.display = "none";
+      // Load the new page
+      window.location.href = targetPage;
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".nav-item").forEach((item) => {
+    const itemPage = item.getAttribute("href");
+    if (itemPage === currentPage) {
+      item.classList.add("active");
     } else {
-      document.querySelector(".main-content").style.display = "none";
-      document.getElementById("pages").style.display = "block";
+      item.classList.remove("active");
     }
   });
 });
 
 // Caledender
 
-const calendarDays = document.getElementById("calendar-days");
+const calenderDays = document.getElementById("calender-days");
 const currentMonth = document.getElementById("current-month");
 
 let today = new Date();
 let displayedMonth = today.getMonth();
 let displayedYear = today.getFullYear();
 
-function renderCalendar(month, year) {
+function rendercalender(month, year) {
   const monthName = new Date(year, month).toLocaleString("default", {
     month: "long",
   });
@@ -173,7 +176,7 @@ function renderCalendar(month, year) {
   }
 
   html += "</tbody></table>";
-  calendarDays.innerHTML = html;
+  calenderDays.innerHTML = html;
 }
 
 document.getElementById("prev-month").addEventListener("click", () => {
@@ -182,7 +185,7 @@ document.getElementById("prev-month").addEventListener("click", () => {
     displayedMonth = 11;
     displayedYear--;
   }
-  renderCalendar(displayedMonth, displayedYear);
+  rendercalender(displayedMonth, displayedYear);
 });
 
 document.getElementById("next-month").addEventListener("click", () => {
@@ -191,7 +194,7 @@ document.getElementById("next-month").addEventListener("click", () => {
     displayedMonth = 0;
     displayedYear++;
   }
-  renderCalendar(displayedMonth, displayedYear);
+  rendercalender(displayedMonth, displayedYear);
 });
 
 // Theme toggle
@@ -199,7 +202,7 @@ document.getElementById("themeToggle").addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
-renderCalendar(displayedMonth, displayedYear);
+rendercalender(displayedMonth, displayedYear);
 
 const tabButtons = document.querySelectorAll(".tab-btn");
 const tabContents = document.querySelectorAll(".tab-content");

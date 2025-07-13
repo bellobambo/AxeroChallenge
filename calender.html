@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendar | OfficeConnect</title>
+    <title>calender | OfficeConnect</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="/styles.css" />
   </head>
+
   <body>
     <div class="container">
       <!-- Header (same as index.html) -->
@@ -36,35 +37,48 @@
       <!-- Sidebar (same as index.html) -->
       <aside class="sidebar">
         <a href="index.html" class="nav-item">
-          <i class="fas fa-home"></i>
-          <span>Dashboard</span>
+          <i class="fas fa-home"></i><span>Dashboard</span>
         </a>
-        <a href="calendar.html" class="nav-item active">
-          <i class="fas fa-calendar-alt"></i>
-          <span>Calendar</span>
+        <a href="calender.html" class="nav-item">
+          <i class="fas fa-calendar-alt"></i><span>Calendar</span>
         </a>
-        <!-- Other navigation items -->
+        <a href="teams.html" class="nav-item">
+          <i class="fas fa-users"></i><span>Teams</span>
+        </a>
+        <a href="documents.html" class="nav-item">
+          <i class="fas fa-file-alt"></i><span>Documents</span>
+        </a>
+        <a href="reports.html" class="nav-item">
+          <i class="fas fa-chart-line"></i><span>Reports</span>
+        </a>
+        <div class="divider"></div>
+        <a href="settings.html" class="nav-item">
+          <i class="fas fa-cog"></i><span>Settings</span>
+        </a>
+        <a href="help.html" class="nav-item active">
+          <i class="fas fa-question-circle"></i><span>Help Center</span>
+        </a>
       </aside>
 
-      <!-- Calendar Content -->
-      <!-- Calendar Content -->
+      <!-- calender Content -->
+      <!-- calender Content -->
       <main class="main-content">
         <div class="page">
           <div class="page-header">
-            <h2><i class="fas fa-calendar-alt"></i> Company Calendar</h2>
+            <h2><i class="fas fa-calender-alt"></i> Company calender</h2>
           </div>
-          <div class="calendar-controls">
+          <div class="calender-controls">
             <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
             <h3 id="current-month">July 2025</h3>
             <button id="next-month">
               <i class="fas fa-chevron-right"></i>
             </button>
           </div>
-          <div class="calendar-view">
-            <div class="calendar-grid" id="calendar-days">
-              <!-- Calendar days will be inserted here by JavaScript -->
+          <div class="calender-view">
+            <div class="calender-grid" id="calender-days">
+              <!-- calender days will be inserted here by JavaScript -->
             </div>
-            <div class="calendar-events">
+            <div class="calender-events">
               <h3>Upcoming Events</h3>
               <div class="events-tabs">
                 <button class="tab-btn active" data-tab="birthdays">
