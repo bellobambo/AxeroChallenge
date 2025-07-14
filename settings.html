@@ -2,18 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings | OfficeConnect</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="logo">
+          <i class="fas fa-building"></i>
+          <h1>Axero OfficeConnect</h1>
+        </div>
+        <div class="user-actions">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." />
+          </div>
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="user-profile">
+            <div class="avatar">JS</div>
+            <span>Jamie Smith</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
       <aside class="sidebar">
-        <a href="index.html" class="nav-item">
+        <a href="dashboard.html" class="nav-item">
           <i class="fas fa-home"></i><span>Dashboard</span>
         </a>
         <a href="calender.html" class="nav-item">
@@ -29,7 +51,7 @@
           <i class="fas fa-chart-line"></i><span>Reports</span>
         </a>
         <div class="divider"></div>
-        <a href="settings.html" class="nav-item active">
+        <a href="settings.html" class="nav-item">
           <i class="fas fa-cog"></i><span>Settings</span>
         </a>
         <a href="help.html" class="nav-item">
@@ -37,50 +59,80 @@
         </a>
       </aside>
 
-      <div id="settings-page" class="page main-content">
-        <div class="page-header">
-          <h2><i class="fas fa-cog"></i> Settings</h2>
-        </div>
-        <div class="settings-container">
-          <div class="settings-section">
-            <h3>Profile Settings</h3>
-            <div class="setting-item">
-              <label for="display-name">Display Name</label>
-              <input type="text" id="display-name" value="Jamie Smith" />
-            </div>
-            <div class="setting-item">
-              <label for="email">Email</label>
-              <input type="email" id="email" value="jamie.smith@company.com" />
-            </div>
-            <div class="setting-item">
-              <label>Profile Picture</label>
-              <div class="avatar-upload">
-                <div class="avatar">JS</div>
-                <button class="upload-btn">Change</button>
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="page" id="settings-page">
+          <div class="page-header">
+            <h2><i class="fas fa-cog"></i> Settings</h2>
+          </div>
+
+          <div class="settings-container">
+            <!-- Profile Settings -->
+            <div class="settings-section">
+              <h3>Profile Settings</h3>
+              <div class="setting-item">
+                <label for="display-name">Display Name</label>
+                <input type="text" id="display-name" value="Jamie Smith" />
+              </div>
+              <div class="setting-item">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  value="jamie.smith@company.com"
+                />
+              </div>
+              <div class="setting-item">
+                <label>Profile Picture</label>
+                <div class="avatar-upload">
+                  <div class="avatar">JS</div>
+                  <button class="upload-btn">Change</button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="settings-section">
-            <h3>Notification Preferences</h3>
-            <div class="setting-item">
-              <label
-                ><input type="checkbox" checked /> Email Notifications</label
-              >
+            <!-- Notification Preferences -->
+            <div class="settings-section">
+              <h3>Notification Preferences</h3>
+              <div class="setting-item">
+                <label>
+                  <input type="checkbox" checked />
+                  Email Notifications
+                </label>
+              </div>
+              <div class="setting-item">
+                <label>
+                  <input type="checkbox" checked />
+                  Desktop Notifications
+                </label>
+              </div>
+              <div class="setting-item">
+                <label>
+                  <input type="checkbox" />
+                  Mobile Notifications
+                </label>
+              </div>
             </div>
-            <div class="setting-item">
-              <label
-                ><input type="checkbox" checked /> Desktop Notifications</label
-              >
-            </div>
-            <div class="setting-item">
-              <label><input type="checkbox" /> Mobile Notifications</label>
-            </div>
-          </div>
 
-          <button class="save-settings">Save Changes</button>
+            <button class="save-settings">Save Changes</button>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
+
+    <script>
+      // Sidebar Active Tab Highlight
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname.toLowerCase();
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const href = item.getAttribute("href").toLowerCase();
+          if (currentPath.endsWith(href)) {
+            item.classList.add("active");
+          } else {
+            item.classList.remove("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

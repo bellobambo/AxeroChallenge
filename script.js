@@ -82,41 +82,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Add this to your existing script.js
-
-// Navigation functionality
 document.querySelectorAll(".nav-item").forEach((item) => {
   item.addEventListener("click", function (e) {
-    // Remove active class from all nav items
     document.querySelectorAll(".nav-item").forEach((navItem) => {
       navItem.classList.remove("active");
     });
 
-    // Add active class to clicked nav item
     this.classList.add("active");
 
-    // If it's not an external link, prevent default
     if (!this.href.startsWith("http") && !this.href.startsWith("mailto")) {
       e.preventDefault();
-
-      // Get the target page from href
       const targetPage = this.getAttribute("href");
-
-      // Load the new page
       window.location.href = targetPage;
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-  document.querySelectorAll(".nav-item").forEach((item) => {
-    const itemPage = item.getAttribute("href");
-    if (itemPage === currentPage) {
-      item.classList.add("active");
-    } else {
-      item.classList.remove("active");
     }
   });
 });
@@ -214,5 +191,19 @@ tabButtons.forEach((btn) => {
 
     btn.classList.add("active");
     document.getElementById(`${btn.dataset.tab}-tab`).classList.add("active");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentPath = window.location.pathname.toLowerCase();
+
+  document.querySelectorAll(".nav-item").forEach((item) => {
+    const href = item.getAttribute("href").toLowerCase();
+
+    if (currentPath.endsWith(href)) {
+      item.classList.add("active");
+    } else {
+      item.classList.remove("active");
+    }
   });
 });

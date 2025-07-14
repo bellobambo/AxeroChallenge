@@ -12,8 +12,30 @@
   </head>
   <body>
     <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="logo">
+          <i class="fas fa-building"></i>
+          <h1>Axero OfficeConnect</h1>
+        </div>
+        <div class="user-actions">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." />
+          </div>
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="user-profile">
+            <div class="avatar">JS</div>
+            <span>Jamie Smith</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
       <aside class="sidebar">
-        <a href="index.html" class="nav-item">
+        <a href="dashboard.html" class="nav-item">
           <i class="fas fa-home"></i><span>Dashboard</span>
         </a>
         <a href="calender.html" class="nav-item">
@@ -32,27 +54,30 @@
         <a href="settings.html" class="nav-item">
           <i class="fas fa-cog"></i><span>Settings</span>
         </a>
-        <a href="help.html" class="nav-item active">
+        <a href="help.html" class="nav-item">
           <i class="fas fa-question-circle"></i><span>Help Center</span>
         </a>
       </aside>
 
+      <!-- Main Content -->
       <main id="help-page" class="page main-content">
         <div class="page-header">
           <h2><i class="fas fa-question-circle"></i> Help Center</h2>
         </div>
+
         <div class="help-container">
           <div class="help-search">
             <input type="text" placeholder="How can we help you?" />
             <button><i class="fas fa-search"></i></button>
           </div>
+
           <div class="help-categories">
             <div class="help-category">
               <h3><i class="fas fa-laptop"></i> Getting Started</h3>
               <ul>
                 <li>How to navigate the intranet</li>
                 <li>Setting up your profile</li>
-                <li>Using the company calender</li>
+                <li>Using the company calendar</li>
               </ul>
             </div>
             <div class="help-category">
@@ -72,16 +97,32 @@
               </ul>
             </div>
           </div>
+
           <div class="help-contact">
             <h3>Still need help?</h3>
             <p>
               Contact our support team at
-              <a href="mailto:support@company.com">support@company.com</a> or
-              call extension 5555.
+              <a href="mailto:bellobambo21@gmail.com">bellobambo21@gmail.com</a>
+              or call extension +234-706-627-9211.
             </p>
           </div>
         </div>
       </main>
     </div>
+
+    <script>
+      // Sidebar Active Tab Highlight
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname.toLowerCase();
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const href = item.getAttribute("href").toLowerCase();
+          if (currentPath.endsWith(href)) {
+            item.classList.add("active");
+          } else {
+            item.classList.remove("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
