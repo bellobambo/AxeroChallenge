@@ -123,6 +123,26 @@
           }
         });
       });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".help-search input");
+
+        searchInput.addEventListener("input", function () {
+          const query = this.value.toLowerCase();
+          const categories = document.querySelectorAll(".help-category");
+
+          categories.forEach((category) => {
+            const heading = category
+              .querySelector("h3")
+              .textContent.toLowerCase();
+            if (heading.includes(query)) {
+              category.style.display = "block";
+            } else {
+              category.style.display = "none";
+            }
+          });
+        });
+      });
     </script>
   </body>
 </html>

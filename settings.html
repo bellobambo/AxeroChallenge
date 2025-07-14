@@ -82,13 +82,6 @@
                   value="jamie.smith@company.com"
                 />
               </div>
-              <div class="setting-item">
-                <label>Profile Picture</label>
-                <div class="avatar-upload">
-                  <div class="avatar">JS</div>
-                  <button class="upload-btn">Change</button>
-                </div>
-              </div>
             </div>
 
             <!-- Notification Preferences -->
@@ -131,6 +124,46 @@
           } else {
             item.classList.remove("active");
           }
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentPath = window.location.pathname.toLowerCase();
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const href = item.getAttribute("href").toLowerCase();
+          if (currentPath.endsWith(href)) {
+            item.classList.add("active");
+          } else {
+            item.classList.remove("active");
+          }
+        });
+
+        const saveBtn = document.querySelector(".save-settings");
+        const displayNameInput = document.getElementById("display-name");
+        const avatarDiv = document.querySelector(".avatar");
+        const userNameSpan = document.querySelector(".user-profile span");
+
+        saveBtn.addEventListener("click", () => {
+          const name = displayNameInput.value.trim();
+
+          if (name.length === 0) {
+            alert("Please enter a valid name.");
+            return;
+          }
+
+          // Update avatar initials
+          const initials = name
+            .split(" ")
+            .map((word) => word.charAt(0).toUpperCase())
+            .join("")
+            .slice(0, 2); // Limit to 2 letters
+          avatarDiv.textContent = initials;
+
+          // Update name beside avatar
+          userNameSpan.textContent = name;
+
+          // Show success alert
+          alert("Your changes have been saved!");
         });
       });
     </script>
