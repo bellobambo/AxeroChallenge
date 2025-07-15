@@ -538,9 +538,9 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .sidebar {
+    /* .sidebar {
         display: none;
-    }
+    } */
 
     .main-content {
         padding: 1rem;
@@ -1566,4 +1566,74 @@ body.dark-mode .page-header h2 {
 
 .dark-mode .help-contact a {
     color: var(--accent);
+}
+
+.hamburger {
+    display: none;
+}
+
+
+/* Hide sidebar on small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 240px;
+        height: 100%;
+        background-color: var(--light-bg);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: inline-block;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Only show close button on smaller screens */
+.sidebar-header {
+    display: none;
+    padding: 1rem;
+    text-align: right;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+    .sidebar-header {
+        display: block;
+    }
 }

@@ -235,3 +235,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Start the application
   initializeApp();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const closeBtn = document.getElementById("closeSidebar");
+  const sidebar = document.querySelector(".sidebar");
+
+  hamburgerBtn.addEventListener("click", function () {
+    sidebar.classList.toggle("open");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    sidebar.classList.remove("open");
+  });
+});
