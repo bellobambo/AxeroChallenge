@@ -1,5 +1,8 @@
 // ==================== MAIN APPLICATION ====================
 document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.pathname === "/") {
+    window.location.replace("/dashboard");
+  }
   // ==================== THEME SYSTEM ====================
   const themeToggle = document.getElementById("themeToggle");
   const themeIcon = themeToggle?.querySelector("i");
